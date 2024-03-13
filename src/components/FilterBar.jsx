@@ -30,8 +30,8 @@ export const FilterBar = () => {
                     <label htmlFor="dragon">Dragón</label>
                 </div>
                 <div className="group-type">
-                    <input type="checkbox" name="shadow" id="shadow" onChange={handleCheckBox} />
-                    <label htmlFor="shadow">Fantasma</label>
+                    <input type="checkbox" name="ghost" id="ghost" onChange={handleCheckBox} />
+                    <label htmlFor="ghost">Fantasma</label>
                 </div>
                 <div className="group-type">
                     <input type="checkbox" name="ground" id="ground" onChange={handleCheckBox} />
