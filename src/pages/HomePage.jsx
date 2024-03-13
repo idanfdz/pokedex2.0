@@ -7,6 +7,7 @@ export const HomePage = () => {
 
   const { onClickLoadMore, active, setActive } = useContext(PokemonContext)
 
+  //By iDan
 
   return (
     <>
