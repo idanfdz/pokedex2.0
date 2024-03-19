@@ -17,6 +17,7 @@ const CardPokemon = ({ pokemon }) => {
                 <div className="card-types">
                     {pokemon?.types.map(type => (
                         <span key={type?.type?.name} className={type?.type?.name}>
+                            <img src={`src/assets/type/${type?.type?.name}.svg`} alt={type?.type?.name} />
                             {type?.type?.name}
                         </span>
                     ))}

@@ -59,7 +59,6 @@ header {
 header form {
     display: flex;
     align-items: center;
-
     gap: 15px;
 }
 
@@ -139,7 +138,6 @@ header form {
 
 .card-img {
     background-color: #f2f2f2;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -174,14 +172,21 @@ header form {
 }
 
 .card-types span {
-    font-size: 12px;
+    display: flex;
+    font-size: 16px;
     padding: 5px 20px;
     border-radius: 5px;
     color: #fff;
     text-transform: capitalize
 }
 
+.card-types span img {
+    margin-right: 5px;
+    width: 20px;
+}
+
 /* Types of Pokemon */
+
 .water {
     background-color: var(--color-water);
 }
@@ -257,6 +262,7 @@ header form {
 /* Container Filters */
 .container-filters {
     display: flex;
+    flex-direction: column;
     justify-content: center;
 
     position: fixed;
@@ -267,7 +273,7 @@ header form {
     color: #555;
     background-color: #f2f2f2;
     height: 100%;
-    padding-top: 140px;
+    padding: 140px 20px 30px 20px;
     transition: all .3s linear;
 
 }
@@ -279,8 +285,9 @@ header form {
 .filter-by-type {
     display: flex;
     flex-direction: column;
-
     gap: 20px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
 }
 
 .filter-by-type span {
@@ -291,13 +298,48 @@ header form {
 .group-type {
     display: flex;
     gap: 10px;
-
+    color: #fff;
+    font-family: 'Montserrat';
+    text-transform: capitalize;
     margin-left: 15px;
 }
 
 .group-type label {
+    width: 200px;
     cursor: pointer;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    padding: 5px 15px;
 }
+
+.group-type label img {
+    width: 25px;
+    margin-right: 10px;
+}
+
+
+.group-type {
+    position: relative;
+}
+
+.group-type input {
+    -webkit-appearance: none;
+    -moz-appearance: window;
+    -ms-appearance: window;
+    appearance: window;
+    position: absolute;
+    top: 0;
+    width: 50px;
+    height: 50px;
+}
+
+.group-type input:checked+label {
+    border: 3px solid #000;
+}
+
+
 
 /* 
 ======================================= 
@@ -313,10 +355,9 @@ Styles of Pokemon Single Page
 
 .header-main-pokemon {
     margin-top: 20px;
-
+    margin-bottom: 30px;
     display: flex;
-    align-items: center;
-
+    align-items: flex-end;
     position: relative;
 }
 
@@ -324,7 +365,7 @@ Styles of Pokemon Single Page
     position: absolute;
     top: -70px;
     left: 0;
-
+    z-index: -1;
     font-size: 300px;
     font-weight: 700;
     color: var(--color-primary-hover);
@@ -338,6 +379,7 @@ Styles of Pokemon Single Page
 
 .container-img-pokemon img {
     width: 100%;
+    max-height: 700px;
 }
 
 .container-info-pokemon {
@@ -345,14 +387,12 @@ Styles of Pokemon Single Page
     flex-direction: column;
     order: 1;
     flex: 1;
-    text-transform: capitalize;
 }
 
 .container-info-pokemon h1 {
     text-align: right;
     font-size: 50px;
-
-
+    text-transform: capitalize;
 }
 
 .info-pokemon {
@@ -362,8 +402,34 @@ Styles of Pokemon Single Page
     margin-top: 20px;
 }
 
-.group-info p {
+.group-info h2 {
+    text-align: center;
     font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
+.abilities-container {
+    width: 100%;
+    text-align: center;
+}
+
+.abilities-container h2 {
+    margin: 32px 0;
+}
+
+.info-abilities {
+    display: flex;
+    justify-content: space-between;
+}
+
+.group-info span,
+.ability-info {
+    padding: 5px 15px;
+    font-size: 24px;
+    font-weight: 500;
+    border-radius: 8px;
+    text-transform: capitalize;
 }
 
 /* Stats */
@@ -414,4 +480,47 @@ progress::-webkit-progress-bar {
 progress::-webkit-progress-value {
     background-color: var(--color-primary);
     border-radius: 7px;
+}
+
+.container-btn-load-more {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-load-more {
+    border: none;
+    border-radius: 8px;
+    margin: 24px 0;
+    padding: 10px;
+    box-shadow: 9px 14px 19px -10px rgba(122, 120, 122, 1);
+    color: #fff;
+    font-family: 'Montserrat';
+    font-size: 24px;
+    background-color: #d91617;
+    cursor: pointer;
+}
+
+.container-loader {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-loader img {
+    width: 300px;
+}
+
+.container-cross-out {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.cross-out {
+    cursor: pointer;
+    width: 30px;
+    color: #000;
+    fill: #000;
 }

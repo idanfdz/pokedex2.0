@@ -59,7 +59,7 @@ const PokemonProvider = ({ children }) => {
 
     const getGlobalPokemon = async () => {
         const basdeUrl = 'https://pokeapi.co/api/v2/'
-        const res = await fetch(`${basdeUrl}pokemon?limit=250&offset=0`)
+        const res = await fetch(`${basdeUrl}pokemon?limit=649&offset=0`)
         const data = await res?.json()
 
         const promises = data?.results?.map(async (pokemon) => {
@@ -67,9 +67,12 @@ const PokemonProvider = ({ children }) => {
             const data = await res?.json()
             return data
         })
+
         const results = await Promise.all(promises)
+
         setGlobalPokemon(results)
         setLoading(false)
+
     }
 
     const getPokemonById = async (id) => {
@@ -79,6 +82,7 @@ const PokemonProvider = ({ children }) => {
         const data = await res?.json()
         return data
     }
+
 
     useEffect(() => {
         getAllPokemon()
