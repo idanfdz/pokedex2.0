@@ -5,7 +5,7 @@ import { PokemonContext } from '../context/PokemonContext'
 
 export const HomePage = () => {
 
-  const { onClickLoadMore, active, setActive } = useContext(PokemonContext)
+  const { onClickLoadMore, active, loading, setActive } = useContext(PokemonContext)
 
   //By iDan
 
@@ -33,9 +33,11 @@ export const HomePage = () => {
 
       <PokemonList />
       <FilterBar />
-      <div className="container-btn-load-more container">
-        <button className='btn-load-more ' onClick={onClickLoadMore}>Cargar más...</button>
-      </div>
+      {!loading &&
+        <div className="container-btn-load-more container">
+          <button className='btn-load-more ' onClick={onClickLoadMore}>Cargar más...</button>
+        </div>
+      }
     </>
   )
 }

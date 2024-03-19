@@ -45,12 +45,26 @@ export const PokemonPage = () => {
               </div>
               <div className="info-pokemon">
                 <div className="group-info">
-                  <p>Altura</p>
-                  <span>{pokemon.height}</span>
+                  <h2>Altura</h2>
+                  <span>{(pokemon.height * .10).toFixed(1)} m</span>
                 </div>
                 <div className="group-info">
-                  <p>Peso</p>
+                  <h2>Peso</h2>
                   <span>{pokemon.weight}kg</span>
+                </div>
+              </div>
+              <div className="abilities-container container">
+                <h2>Habilidades</h2>
+                <div className="info-abilities">
+                  {
+                    pokemon.abilities.map((ability) => (
+
+                      <div className="ability-info">
+                        <span>{ability.ability.name}</span>
+                      </div>
+
+                    ))
+                  }
                 </div>
               </div>
             </div>
@@ -66,7 +80,7 @@ export const PokemonPage = () => {
                 </span>
                 <progress value={`${pokemon.stats[0].base_stat}`} max="160"></progress>
                 <span className="counter-stat">
-                  150
+                  160
                 </span>
               </div>
               <div className="stat-group">
@@ -76,7 +90,7 @@ export const PokemonPage = () => {
                 </span>
                 <progress value={`${pokemon.stats[1].base_stat}`} max="160"></progress>
                 <span className="counter-stat">
-                  150
+                  160
                 </span>
               </div>
               <div className="stat-group">
@@ -86,7 +100,7 @@ export const PokemonPage = () => {
                 </span>
                 <progress value={`${pokemon.stats[2].base_stat}`} max="160"></progress>
                 <span className="counter-stat">
-                  150
+                  160
                 </span>
               </div>
               <div className="stat-group">
@@ -96,7 +110,7 @@ export const PokemonPage = () => {
                 </span>
                 <progress value={`${pokemon.stats[3].base_stat}`} max="160"></progress>
                 <span className="counter-stat">
-                  150
+                  160
                 </span>
               </div>
               <div className="stat-group">
@@ -106,7 +120,7 @@ export const PokemonPage = () => {
                 </span>
                 <progress value={`${pokemon.stats[4].base_stat}`} max="160"></progress>
                 <span className="counter-stat">
-                  150
+                  160
                 </span>
               </div>
               <div className="stat-group">
@@ -116,7 +130,7 @@ export const PokemonPage = () => {
                 </span>
                 <progress value={`${pokemon.stats[5].base_stat}`} max="160"></progress>
                 <span className="counter-stat">
-                  150
+                  160
                 </span>
               </div>
             </div>
